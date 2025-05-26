@@ -29,6 +29,9 @@ namespace CMS.Pages.AuditLogs
         public string? TableName { get; set; }
 
         [BindProperty(SupportsGet = true)]
+        public string? Action { get; set; }
+
+        [BindProperty(SupportsGet = true)]
         public DateTime? FromDate { get; set; }
 
         [BindProperty(SupportsGet = true)]
@@ -52,6 +55,11 @@ namespace CMS.Pages.AuditLogs
                 query = query.Where(a => a.Tables == TableName);
             }
 
+            if (!string.IsNullOrEmpty(Action))
+            {
+                query = query.Where(a => a.Action == Action);
+            }
+
             if (FromDate.HasValue)
             {
                 query = query.Where(a => a.CreateDate >= FromDate.Value);
@@ -62,7 +70,7 @@ namespace CMS.Pages.AuditLogs
                 query = query.Where(a => a.CreateDate <= ToDate.Value.Date.AddDays(1).AddTicks(-1));
             }
 
-            // Load all data without pagination
+            // Load all data
             AuditLogs = await query
                 .OrderByDescending(a => a.CreateDate)
                 .ToListAsync();

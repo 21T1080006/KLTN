@@ -1,7 +1,9 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
+﻿# Ignore Visual Studio temporary files
+.vs/
+# Ignore project user settings
+*.csproj.user
+# Ignore project file (if not needed in version control)
 /CMS.csproj
-/CMS.csproj
-/.vs/CMS
+# Ignore build output
+bin/
+obj/
