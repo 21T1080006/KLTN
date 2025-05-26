@@ -1,0 +1,99 @@
+﻿@page
+@model CMS.Pages.Contract.ChartModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Chart";
+}
+
+<h2>Thống kê hợp đồng</h2>
+
+<!-- Button to download Excel -->
+<div class="row mb-3">
+    <div class="col-md-12">
+        <a href="?handler=DownloadExcel" class="btn btn-success">Tải xuống Excel</a>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Biểu đồ theo trạng thái -->
+    <div class="col-md-6">
+        <h4>Theo trạng thái</h4>
+        <canvas id="statusChart" width="400" height="200"></canvas>
+    </div>
+
+    <!-- Biểu đồ theo quý -->
+    <div class="col-md-6">
+        <h4>Theo quý</h4>
+        <canvas id="quarterChart" width="400" height="200"></canvas>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // 1. Biểu đồ theo trạng thái (Bar Chart)
+        var statusCtx = document.getElementById('statusChart').getContext('2d');
+        new Chart(statusCtx, {
+            type: 'bar',
+            data: {
+                labels: @Json.Serialize(Model.StatusStatistics.Select(s => s.ContractStatus)),
+                datasets: [{
+                    label: 'Số lượng hợp đồng',
+                    data: @Json.Serialize(Model.StatusStatistics.Select(s => s.ContractCount)),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // 2. Biểu đồ theo quý (Line Chart)
+        var quarterCtx = document.getElementById('quarterChart').getContext('2d');
+        new Chart(quarterCtx, {
+            type: 'line',
+            data: {
+                labels: @Json.Serialize(Model.QuarterStatistics.Select(s => $"{s.ContractYear} Q{s.Quarter}")),
+                datasets: [{
+                    label: 'Số lượng hợp đồng',
+                    data: @Json.Serialize(Model.QuarterStatistics.Select(s => s.ContractCount)),
+                    fill: false,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+}
+
+<style>
+    .row {
+        margin-top: 20px;
+    }
+
+    .col-md-4 {
+        padding: 15px;
+    }
+
+    canvas {
+        max-width: 100%;
+    }
+
+    .btn-success {
+        margin-bottom: 10px;
+    }
+</style>

@@ -1,0 +1,95 @@
+﻿@page
+@model CMS.Pages.Manager.BranchModel
+@{
+    ViewData["Title"] = "Branch List";
+    Layout = "_AdminLayout";
+}
+
+<h1>Branch List</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Symbol</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Company</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var branch in Model.Branches)
+        {
+            <tr>
+                <td>@branch.BranchName</td>
+                <td>@branch.BranchSymbol</td>
+                <td>@branch.Address</td>
+                <td>@branch.City</td>
+                <td>@branch.Country</td>
+                <td>@(branch.Company?.CompanyName ?? "N/A")</td>
+                <td>
+                    <button class="btn btn-primary btn-sm" onclick="showDetails(@branch.AutoID)">
+                        <i class="bi bi-eye-fill"></i>
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Modal chi tiết -->
+<div class="modal fade" id="branchDetailsModal" tabindex="-1" aria-labelledby="branchDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="branchDetailsModalLabel">Branch Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Name:</strong> <span id="detailName"></span></p>
+                <p><strong>Symbol:</strong> <span id="detailSymbol"></span></p>
+                <p><strong>Address:</strong> <span id="detailAddress"></span></p>
+                <p><strong>City:</strong> <span id="detailCity"></span></p>
+                <p><strong>Country:</strong> <span id="detailCountry"></span></p>
+                <p><strong>Phone:</strong> <span id="detailPhone"></span></p>
+                <p><strong>Home Phone:</strong> <span id="detailHomePhone"></span></p>
+                <p><strong>Representative:</strong> <span id="detailRepresentative"></span></p>
+                <p><strong>Active:</strong> <span id="detailIsActive"></span></p>
+                <p><strong>Company:</strong> <span id="detailCompany"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function showDetails(branchId) {
+            $.ajax({
+                url: '@Url.Page("/Manager/Branch", "Details")',
+                type: 'GET',
+                data: { id: branchId },
+                success: function (data) {
+                    $('#detailName').text(data.branchName);
+                    $('#detailSymbol').text(data.branchSymbol);
+                    $('#detailAddress').text(data.address);
+                    $('#detailCity').text(data.city);
+                    $('#detailCountry').text(data.country);
+                    $('#detailPhone').text(data.phone);
+                    $('#detailHomePhone').text(data.homePhone);
+                    $('#detailRepresentative').text(data.representative);
+                    $('#detailIsActive').text(data.isActive ? 'Yes' : 'No');
+                    $('#detailCompany').text(data.companyName || 'N/A');
+                    $('#branchDetailsModal').modal('show');
+                },
+                error: function () {
+                    alert('Error loading branch details.');
+                }
+            });
+        }
+    </script>
+}

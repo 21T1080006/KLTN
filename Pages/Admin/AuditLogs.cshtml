@@ -1,0 +1,73 @@
+﻿@page
+@model CMS.Pages.AuditLogs.IndexModel
+@{
+    ViewData["Title"] = "Audit Log";
+    Layout = "_AdminLayout";
+}
+
+<form method="get" class="row g-3 mb-4">
+    <div class="col-md-3">
+        <label class="form-label">Người dùng</label>
+        <select class="form-select" asp-for="UserId" name="UserId">
+            <option value="">-- Tất cả --</option>
+            @foreach (var user in Model.Users)
+            {
+                <option value="@user.Id" selected="@(user.Id == Model.UserId)">
+                    @user.FullName (@user.UserName)
+                </option>
+            }
+        </select>
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">Tên bảng</label>
+        <select class="form-select" asp-for="TableName" name="TableName">
+            <option value="">-- Tất cả --</option>
+            <option value="Contracts" selected="@(Model.TableName == "Contract")">Contracts</option>
+            <option value="Files" selected="@(Model.TableName == "File")">Files</option>
+            <option value="Invoices" selected="@(Model.TableName == "Invoice")">Invoices</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">Từ ngày</label>
+        <input type="date" class="form-control" asp-for="FromDate" name="FromDate" />
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">Đến ngày</label>
+        <input type="date" class="form-control" asp-for="ToDate" name="ToDate" />
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Lọc</button>
+    </div>
+</form>
+
+@if (!Model.AuditLogs.Any())
+{
+    <div class="alert alert-info">Lịch sử trống.</div>
+}
+else
+{
+    <table class="table table-bordered table-striped">
+        <thead class="table-light">
+            <tr>
+                <th>Thời gian</th>
+                <th>Người thao tác</th>
+                <th>Tên bảng</th>
+                <th>Hành động</th>
+                <th>Ghi chú</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var log in Model.AuditLogs)
+            {
+                var user = Model.Users.FirstOrDefault(u => u.Id == log.UserID);
+                <tr>
+                    <td>@log.CreateDate?.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                    <td>@(user?.FullName ?? "Không xác định")</td>
+                    <td>@log.Tables</td>
+                    <td>@log.Action</td>
+                    <td>@log.Note</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

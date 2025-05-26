@@ -1,0 +1,120 @@
+﻿@page
+@model CMS.Pages.Manager.DepartmentModel
+@{
+    ViewData["Title"] = "Department List";
+    Layout = "_AdminLayout";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        @for (int i = 0; i < Model.DepartmentsByBranch.Count; i += 2)
+        {
+            var branch = Model.DepartmentsByBranch.ElementAt(i);
+            <h3>@(branch.Key.BranchName ?? "No Branch")</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Symbol</th>
+                        <th>Representative</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var department in branch.Value)
+                    {
+                        <tr>
+                            <td>@department.DepartmentName</td>
+                            <td>@department.DepartmentSymbol</td>
+                            <td>@department.Representative</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" onclick="showDetails(@department.AutoID)">
+                                    <i class="bi bi-eye-fill"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+    <div class="col-md-6">
+        @for (int i = 1; i < Model.DepartmentsByBranch.Count; i += 2)
+        {
+            var branch = Model.DepartmentsByBranch.ElementAt(i);
+            <h3>@(branch.Key.BranchName ?? "No Branch")</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Symbol</th>
+                        <th>Representative</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var department in branch.Value)
+                    {
+                        <tr>
+                            <td>@department.DepartmentName</td>
+                            <td>@department.DepartmentSymbol</td>
+                            <td>@department.Representative</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" onclick="showDetails(@department.AutoID)">
+                                    <i class="bi bi-eye-fill"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+<!-- Modal chi tiết -->
+<div class="modal fade" id="departmentDetailsModal" tabindex="-1" aria-labelledby="departmentDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="departmentDetailsModalLabel">Department Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Name:</strong> <span id="detailName"></span></p>
+                <p><strong>Symbol:</strong> <span id="detailSymbol"></span></p>
+                <p><strong>Description:</strong> <span id="detailDescription"></span></p>
+                <p><strong>Representative:</strong> <span id="detailRepresentative"></span></p>
+                <p><strong>Active:</strong> <span id="detailIsActive"></span></p>
+                <p><strong>Branch:</strong> <span id="detailBranch"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function showDetails(departmentId) {
+            $.ajax({
+                url: '@Url.Page("/Manager/Department", "Details")',
+                type: 'GET',
+                data: { id: departmentId },
+                success: function (data) {
+                    $('#detailName').text(data.departmentName);
+                    $('#detailSymbol').text(data.departmentSymbol);
+                    $('#detailDescription').text(data.departmentDescription);
+                    $('#detailRepresentative').text(data.representative);
+                    $('#detailIsActive').text(data.isActive ? 'Yes' : 'No');
+                    $('#detailBranch').text(data.branchName || 'N/A');
+                    $('#departmentDetailsModal').modal('show');
+                },
+                error: function () {
+                    alert('Error loading department details.');
+                }
+            });
+        }
+    </script>
+}
