@@ -7,6 +7,9 @@ wwwroot\dist\assets\img\avatar2.png
 wwwroot\dist\assets\img\avatar3.png
 wwwroot\dist\assets\img\avatar4.png
 wwwroot\dist\assets\img\avatar5.png
+wwwroot\dist\assets\img\bg1.jpeg
+wwwroot\dist\assets\img\bg2.jpeg
+wwwroot\dist\assets\img\bg4.jpeg
 wwwroot\dist\assets\img\bgblue.png
 wwwroot\dist\assets\img\bglaptop.png
 wwwroot\dist\assets\img\boxed-bg.jpg

@@ -45,6 +45,18 @@
       "PackagePath": "staticwebassets\\dist\\assets\\img\\avatar5.png"
     },
     {
+      "Id": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\dist\\assets\\img\\bg1.jpeg",
+      "PackagePath": "staticwebassets\\dist\\assets\\img\\bg1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\dist\\assets\\img\\bg2.jpeg",
+      "PackagePath": "staticwebassets\\dist\\assets\\img\\bg2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\dist\\assets\\img\\bg4.jpeg",
+      "PackagePath": "staticwebassets\\dist\\assets\\img\\bg4.jpeg"
+    },
+    {
       "Id": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\dist\\assets\\img\\bgblue.png",
       "PackagePath": "staticwebassets\\dist\\assets\\img\\bgblue.png"
     },

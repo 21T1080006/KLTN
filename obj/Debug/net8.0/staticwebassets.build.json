@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1uWfWMtmjvxptxveQlW/qN64k2XHLFYclMi4V8JD0+0=",
+  "Hash": "SJcUObUSql4tuN9vRHLfpO7ZnOxmQ0TP/UBMin5MBzo=",
   "Source": "CMS",
   "BasePath": "_content/CMS",
   "Mode": "Default",
@@ -246,6 +246,69 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\dist\\assets\\img\\avatar5.png"
+    },
+    {
+      "Identity": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\dist\\assets\\img\\bg1.jpeg",
+      "SourceId": "CMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\",
+      "BasePath": "_content/CMS",
+      "RelativePath": "dist/assets/img/bg1#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dwefi1ut76",
+      "Integrity": "0/BMbIxW6jaT3qBEmxWcLcQoUmNhmGKqkP32l0kj2WY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dist\\assets\\img\\bg1.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\dist\\assets\\img\\bg2.jpeg",
+      "SourceId": "CMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\",
+      "BasePath": "_content/CMS",
+      "RelativePath": "dist/assets/img/bg2#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mwbvatkq3x",
+      "Integrity": "BuzRTsCSHDJYuXcwmVI4BWWYf+ybqlQCVKill6xHrUY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dist\\assets\\img\\bg2.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\dist\\assets\\img\\bg4.jpeg",
+      "SourceId": "CMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\",
+      "BasePath": "_content/CMS",
+      "RelativePath": "dist/assets/img/bg4#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0gxsw4jjhw",
+      "Integrity": "UDhxtDW/dIZk5FUgucJQ4QLjmdIGNC//ncacfURiOW0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dist\\assets\\img\\bg4.jpeg"
     },
     {
       "Identity": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\dist\\assets\\img\\bgblue.png",
@@ -7721,6 +7784,252 @@
         {
           "Name": "integrity",
           "Value": "sha256-Lvg/MF6RGg11xhstUx2ibijfeN3dqId8SbGxuLuZh9k="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/img/bg1.dwefi1ut76.jpeg",
+      "AssetFile": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\dist\\assets\\img\\bg1.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "233016"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0/BMbIxW6jaT3qBEmxWcLcQoUmNhmGKqkP32l0kj2WY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:36:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dwefi1ut76"
+        },
+        {
+          "Name": "label",
+          "Value": "dist/assets/img/bg1.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0/BMbIxW6jaT3qBEmxWcLcQoUmNhmGKqkP32l0kj2WY="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/img/bg1.jpeg",
+      "AssetFile": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\dist\\assets\\img\\bg1.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "233016"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0/BMbIxW6jaT3qBEmxWcLcQoUmNhmGKqkP32l0kj2WY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:36:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0/BMbIxW6jaT3qBEmxWcLcQoUmNhmGKqkP32l0kj2WY="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/img/bg2.jpeg",
+      "AssetFile": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\dist\\assets\\img\\bg2.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "286201"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BuzRTsCSHDJYuXcwmVI4BWWYf+ybqlQCVKill6xHrUY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:37:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BuzRTsCSHDJYuXcwmVI4BWWYf+ybqlQCVKill6xHrUY="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/img/bg2.mwbvatkq3x.jpeg",
+      "AssetFile": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\dist\\assets\\img\\bg2.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "286201"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BuzRTsCSHDJYuXcwmVI4BWWYf+ybqlQCVKill6xHrUY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:37:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mwbvatkq3x"
+        },
+        {
+          "Name": "label",
+          "Value": "dist/assets/img/bg2.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BuzRTsCSHDJYuXcwmVI4BWWYf+ybqlQCVKill6xHrUY="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/img/bg4.0gxsw4jjhw.jpeg",
+      "AssetFile": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\dist\\assets\\img\\bg4.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "252885"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UDhxtDW/dIZk5FUgucJQ4QLjmdIGNC//ncacfURiOW0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:37:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0gxsw4jjhw"
+        },
+        {
+          "Name": "label",
+          "Value": "dist/assets/img/bg4.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UDhxtDW/dIZk5FUgucJQ4QLjmdIGNC//ncacfURiOW0="
+        }
+      ]
+    },
+    {
+      "Route": "dist/assets/img/bg4.jpeg",
+      "AssetFile": "C:\\Users\\tuand\\source\\repos\\CMS\\wwwroot\\dist\\assets\\img\\bg4.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "252885"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UDhxtDW/dIZk5FUgucJQ4QLjmdIGNC//ncacfURiOW0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 08:37:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UDhxtDW/dIZk5FUgucJQ4QLjmdIGNC//ncacfURiOW0="
         }
       ]
     },
